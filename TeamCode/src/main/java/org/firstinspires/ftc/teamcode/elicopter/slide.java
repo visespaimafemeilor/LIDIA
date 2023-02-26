@@ -43,15 +43,15 @@ public class slide {
     public void sliderControllers(boolean cross, boolean circle, boolean triangle, boolean square)
             throws InterruptedException {
         if(triangle) {
-            pozitie = -1115;
+            pozitie = -1140;
             sleep(200);
         }//high
         if(circle){
-            pozitie = -800;
+            pozitie = -815;
             sleep(200);
         }//mid
         if(cross){
-            pozitie = -405;
+            pozitie = -420;
             sleep(200);
         }//low
         if(square){

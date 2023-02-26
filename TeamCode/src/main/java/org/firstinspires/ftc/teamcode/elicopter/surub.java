@@ -2,16 +2,21 @@ package org.firstinspires.ftc.teamcode.elicopter;
 
 import static java.lang.Thread.sleep;
 
+import com.qualcomm.hardware.rev.RevColorSensorV3;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
+
+import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 
 public class surub {
 
     public Servo cleste;
     public Servo turn;
     public DcMotor rasucire;
+
+    public RevColorSensorV3 sensor;
 
     int curl = 0;
 
@@ -38,6 +43,8 @@ public class surub {
 //    }
 
     public void servoINIT(HardwareMap hardwareMap){
+        sensor = hardwareMap.get(RevColorSensorV3.class, "senzor");
+
         cleste = hardwareMap.get(Servo.class, "cleste");
         rasucire = hardwareMap.get(DcMotor.class, "rasucire");
         turn = hardwareMap.get(Servo.class, "turn");
@@ -52,6 +59,8 @@ public class surub {
     }
 
     public void autoINIT(HardwareMap hardwareMap) throws InterruptedException{
+//        sensor = hardwareMap.get(RevColorSensorV3.class, "senzor");
+
         cleste = hardwareMap.get(Servo.class, "cleste");
         rasucire = hardwareMap.get(DcMotor.class, "rasucire");
         turn = hardwareMap.get(Servo.class, "turn");
@@ -107,6 +116,14 @@ public class surub {
         if(z){
             curl=70;
         }
+    }
+
+    public boolean acolosa(){
+        if(sensor.getDistance(DistanceUnit.CM) <=5){
+            return true;
+        }
+        else
+            return false;
     }
 
 //    public void intoarcere (boolean x, boolean y, boolean z){

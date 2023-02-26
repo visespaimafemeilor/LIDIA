@@ -79,12 +79,12 @@ public class normalitate extends LinearOpMode{
                     slide.autonomousSlider(-1160,1);
                     servouri.turn.setPosition(0.4);
                 })
-                .lineTo(
-                        new Vector2d(12, 49),
-                        SampleMecanumDrive.getVelocityConstraint(slowerVelocity, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH),
-                        SampleMecanumDrive.getAccelerationConstraint(slowerAcceleration)
-                )
-            //    .lineToConstantHeading(new Vector2d(8,53))
+//                .lineTo(
+//                        new Vector2d(12, 49),
+//                        SampleMecanumDrive.getVelocityConstraint(slowerVelocity, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH),
+//                        SampleMecanumDrive.getAccelerationConstraint(slowerAcceleration)
+//                )
+                .lineToConstantHeading(new Vector2d(12,49))
                 .addDisplacementMarker(2,()->{
                     servouri.autonomousSwing(-65,0.7);
                 })

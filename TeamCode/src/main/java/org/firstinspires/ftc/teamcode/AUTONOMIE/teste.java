@@ -27,24 +27,27 @@ public class teste extends LinearOpMode{
         slide.sliderINIT(hardwareMap);
         //      Detection detection = new Detection();
         //      detection.VisionInitialization(hardwareMap, telemetry);
-        double slowerVelocity = 35;
         Pose2d start = new Pose2d(0,0, Math.toRadians(90));
         drive.setPoseEstimate(start);
+
+        double slowerVelocity = 30;
+        double slowerAcceleration = 15;
 
         //TODO TRAIECTORII
 
         //preload si aliniere cu stiva
 
         Trajectory test = drive.trajectoryBuilder(start)
-                .lineTo(
-                        new Vector2d(0, 70),
-                        SampleMecanumDrive.getVelocityConstraint(slowerVelocity, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH),
-                        SampleMecanumDrive.getAccelerationConstraint(DriveConstants.MAX_ACCEL)
-                )
+//                .lineTo(
+//                        new Vector2d(0, 70),
+//                        SampleMecanumDrive.getVelocityConstraint(slowerVelocity, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH),
+//                        SampleMecanumDrive.getAccelerationConstraint(slowerAcceleration)
+//                )
+                .lineToConstantHeading(new Vector2d(0,70))
                 .build();
 
         Trajectory spate = drive.trajectoryBuilder(test.end())
-                .back(40)
+                .back(70)
                 .build();
 
         //TODO START

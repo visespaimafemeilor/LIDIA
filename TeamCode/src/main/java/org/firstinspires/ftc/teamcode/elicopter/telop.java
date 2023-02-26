@@ -43,15 +43,22 @@ public class telop extends LinearOpMode {
             }
 
             surub.swing(surub.curl,1);
-            //surub.curl+=(gamepad1.left_trigger-gamepad1.right_trigger);
+            surub.curl+=(gamepad1.left_trigger-gamepad1.right_trigger);
+
+//            if(surub.cleste.getPosition()<0.5 && slide.slide.getCurrentPosition()>-15){
+//                this.sleep(100);
+//                surub.turn.setPosition(0.4);
+//            }
+
             surub.apucare(gamepad1.right_bumper, gamepad1.left_bumper);
             surub.ridicare(gamepad2.left_bumper, gamepad2.right_bumper);
-            surub.intoarcere(gamepad2.dpad_right,gamepad2.dpad_up, gamepad2.dpad_left);
+            surub.intoarcere(gamepad2.dpad_left,gamepad2.dpad_up, gamepad2.dpad_right);
 
-            telemetry.addData("leftFront ", drive.leftFront.getCurrentPosition());
-            telemetry.addData("leftRear ", drive.leftRear.getCurrentPosition());
-            telemetry.addData("rightRear ", drive.rightRear.getCurrentPosition());
-            telemetry.addData("rightFront ", drive.rightFront.getCurrentPosition());
+//            telemetry.addData("leftFront ", drive.leftFront.getCurrentPosition());
+//            telemetry.addData("leftRear ", drive.leftRear.getCurrentPosition());
+//            telemetry.addData("rightRear ", drive.rightRear.getCurrentPosition());
+//            telemetry.addData("rightFront ", drive.rightFront.getCurrentPosition());
+            telemetry.addData("distanta = ", surub.acolosa());
             telemetry.addData("culisanta ", slide.slide.getCurrentPosition());
             telemetry.addData("cleste ", surub.cleste.getPosition());
             telemetry.addData("rasucire ", surub.rasucire.getCurrentPosition());
