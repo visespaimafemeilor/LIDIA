@@ -108,13 +108,13 @@ public class surub {
 
     public void intoarcere (boolean x, boolean y, boolean z){
         if(x){
-            curl=-70;
+            curl=-85;
         }
         if(y){
             curl=0;
         }
         if(z){
-            curl=70;
+            curl=85;
         }
     }
 
