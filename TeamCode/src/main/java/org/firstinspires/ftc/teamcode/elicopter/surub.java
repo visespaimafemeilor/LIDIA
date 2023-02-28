@@ -14,7 +14,9 @@ public class surub {
 
     public Servo cleste;
     public Servo turn;
-    public DcMotor rasucire;
+    public Servo rasucire;
+
+//    public DcMotor rasucire;
 
     public RevColorSensorV3 sensor;
 
@@ -46,32 +48,37 @@ public class surub {
         sensor = hardwareMap.get(RevColorSensorV3.class, "senzor");
 
         cleste = hardwareMap.get(Servo.class, "cleste");
-        rasucire = hardwareMap.get(DcMotor.class, "rasucire");
         turn = hardwareMap.get(Servo.class, "turn");
+        rasucire = hardwareMap.get(Servo.class,"rasucire");
 
         cleste.setPosition(0.65);
         turn.setPosition(0.4);
+        rasucire.setPosition(0.5);
 
-        rasucire.setDirection(DcMotorSimple.Direction.FORWARD);
-        rasucire.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        rasucire.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        rasucire.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+//        rasucire = hardwareMap.get(DcMotor.class, "rasucire");
+//        rasucire.setDirection(DcMotorSimple.Direction.FORWARD);
+//        rasucire.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+//        rasucire.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+//        rasucire.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
     }
 
     public void autoINIT(HardwareMap hardwareMap) throws InterruptedException{
 //        sensor = hardwareMap.get(RevColorSensorV3.class, "senzor");
 
         cleste = hardwareMap.get(Servo.class, "cleste");
-        rasucire = hardwareMap.get(DcMotor.class, "rasucire");
         turn = hardwareMap.get(Servo.class, "turn");
+        rasucire = hardwareMap.get(Servo.class,"rasucire");
 
-        cleste.setPosition(0.8);
-        turn.setPosition(0.5);
+        cleste.setPosition(0.45);
+        sleep(200);
+        turn.setPosition(0.2);
+        rasucire.setPosition(0.5);
 
-        rasucire.setDirection(DcMotorSimple.Direction.FORWARD);
-        rasucire.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        rasucire.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        rasucire.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+//        rasucire = hardwareMap.get(DcMotor.class, "rasucire");
+//        rasucire.setDirection(DcMotorSimple.Direction.FORWARD);
+//        rasucire.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+//        rasucire.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+//        rasucire.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
     }
 
     public void apucare(boolean x, boolean y){
@@ -86,7 +93,7 @@ public class surub {
     public void ridicare (boolean x, boolean y){
         //sus
         if(x){
-            turn.setPosition(0.4);
+            turn.setPosition(0.35);
         }
 
         //jos
@@ -95,28 +102,28 @@ public class surub {
         }
     }
 
-    public void swing (int pozitie, double putere) {
-        rasucire.setTargetPosition(pozitie);
-        rasucire.setPower(putere);
-        rasucire.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-    }
-
-    public void autonomousSwing (int position, double power){
-        swing(position,power);
-        while (rasucire.getCurrentPosition()>position){}
-    }
-
-    public void intoarcere (boolean x, boolean y, boolean z){
-        if(x){
-            curl=-85;
-        }
-        if(y){
-            curl=0;
-        }
-        if(z){
-            curl=85;
-        }
-    }
+//    public void swing (int pozitie, double putere) {
+//        rasucire.setTargetPosition(pozitie);
+//        rasucire.setPower(putere);
+//        rasucire.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+//    }
+//
+//    public void autonomousSwing (int position, double power){
+//        swing(position,power);
+//        while (rasucire.getCurrentPosition()>position){}
+//    }
+//
+//    public void intoarcere (boolean x, boolean y, boolean z){
+//        if(x){
+//            curl=-85;
+//        }
+//        if(y){
+//            curl=0;
+//        }
+//        if(z){
+//            curl=85;
+//        }
+//    }
 
     public boolean acolosa(){
         if(sensor.getDistance(DistanceUnit.CM) <=5){
@@ -126,22 +133,19 @@ public class surub {
             return false;
     }
 
-//    public void intoarcere (boolean x, boolean y, boolean z){
-//        if(x){
-//            rasucire.setPosition(0);
-//        }
-//        if(y){
-//            rasucire.setPosition(0.5);
-//        }
-//        if(z){
-//            rasucire.setPosition(1);
-//        }
-//    }
-
-//    public void setStop(){
-//        if(culisanta.slide.getCurrentPosition()>-200){
-//            rasucire.setPosition(0.5);
-//        }
-//    }
+    public void intoarcere (boolean x, boolean y, boolean z){
+        //stanga robotului
+        if(x){
+            rasucire.setPosition(0.4);
+        }
+        //centru
+        if(y){
+            rasucire.setPosition(0.5);
+        }
+        //dreapta robotului
+        if(z){
+            rasucire.setPosition(0.6);
+        }
+    }
 
 }

@@ -28,7 +28,7 @@ public class slide {
 
     public void autonomousSlider (int position, double power){
         pozitiune(position,power);
-        while (slide.getCurrentPosition()>position){}
+//        while (slide.getCurrentPosition()>position){}
     }
 
     public void corectie(){
@@ -43,15 +43,15 @@ public class slide {
     public void sliderControllers(boolean cross, boolean circle, boolean triangle, boolean square)
             throws InterruptedException {
         if(triangle) {
-            pozitie = -1140;
+            pozitie = -1155;
             sleep(200);
         }//high
         if(circle){
-            pozitie = -815;
+            pozitie = -820;
             sleep(200);
         }//mid
         if(cross){
-            pozitie = -420;
+            pozitie = -410;
             sleep(200);
         }//low
         if(square){

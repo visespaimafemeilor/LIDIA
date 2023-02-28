@@ -1,3 +1,4 @@
+/*
 package org.firstinspires.ftc.teamcode.AUTONOMIE;
 
 import com.acmerobotics.dashboard.config.Config;
@@ -274,3 +275,5 @@ public class normalitate extends LinearOpMode{
     //TODO FUNCTII:
 
 }
+
+*/

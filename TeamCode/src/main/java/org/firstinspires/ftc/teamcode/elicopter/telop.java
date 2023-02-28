@@ -38,12 +38,7 @@ public class telop extends LinearOpMode {
             slide.sliderControllers(gamepad2.cross,gamepad2.circle,gamepad2.triangle,gamepad2.square);
             slide.corectie();
 
-            if(slide.slide.getCurrentPosition()>-300){
-                surub.curl = 0;
-            }
 
-            surub.swing(surub.curl,1);
-            surub.curl+=(gamepad1.left_trigger-gamepad1.right_trigger);
 
 //            if(surub.cleste.getPosition()<0.5 && slide.slide.getCurrentPosition()>-15){
 //                this.sleep(100);
@@ -52,7 +47,21 @@ public class telop extends LinearOpMode {
 
             surub.apucare(gamepad1.right_bumper, gamepad1.left_bumper);
             surub.ridicare(gamepad2.left_bumper, gamepad2.right_bumper);
-            surub.intoarcere(gamepad2.dpad_left,gamepad2.dpad_up, gamepad2.dpad_right);
+            surub.intoarcere(gamepad2.dpad_right,gamepad2.dpad_up, gamepad2.dpad_left);
+
+
+
+            if(slide.slide.getCurrentPosition()>-200){
+                surub.rasucire.setPosition(0.5);
+            }
+
+//            if(slide.slide.getCurrentPosition()>-300){
+//                surub.curl = 0;
+//            }
+//
+//            surub.swing(surub.curl,1);
+//            surub.curl+=(gamepad1.left_trigger-gamepad1.right_trigger);
+
 
 //            telemetry.addData("leftFront ", drive.leftFront.getCurrentPosition());
 //            telemetry.addData("leftRear ", drive.leftRear.getCurrentPosition());
@@ -61,7 +70,7 @@ public class telop extends LinearOpMode {
             telemetry.addData("distanta = ", surub.acolosa());
             telemetry.addData("culisanta ", slide.slide.getCurrentPosition());
             telemetry.addData("cleste ", surub.cleste.getPosition());
-            telemetry.addData("rasucire ", surub.rasucire.getCurrentPosition());
+            telemetry.addData("rasucire ", surub.rasucire.getPosition());
             telemetry.addData("ridicare ", surub.turn.getPosition());
             telemetry.update();
         }

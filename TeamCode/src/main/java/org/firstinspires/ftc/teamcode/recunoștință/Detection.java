@@ -36,6 +36,8 @@ public class Detection {
 
     public AprilTagDetection tagOfInterest = null;
 
+    public int CAZ =2;
+
     public void VisionInitialization (HardwareMap hardwareMap, Telemetry telemetry){
 
         int cameraMonitorViewId = hardwareMap.appContext.getResources().getIdentifier("cameraMonitorViewId", "id", hardwareMap.appContext.getPackageName());
@@ -61,43 +63,56 @@ public class Detection {
         telemetry.setMsTransmissionInterval(50);
     }
 
-    public void detectare (Telemetry telemetry) throws InterruptedException{
+    public void detectare(Telemetry telemetry) throws InterruptedException {
 
         ArrayList<AprilTagDetection> currentDetections = aprilTagDetectionPipeline.getLatestDetections();
 
-        if(currentDetections.size() != 0)
-        {
+        if (currentDetections.size() != 0) {
             boolean tagFound = false;
 
-            for(AprilTagDetection tag : currentDetections)
-            {
-                if(tag.id == Caz1 || tag.id == Caz2 || tag.id == Caz3)
-                {
+            for (AprilTagDetection tag : currentDetections) {
+                if (tag.id == Caz1 || tag.id == Caz2 || tag.id == Caz3) {
                     tagOfInterest = tag;
                     tagFound = true;
                     break;
                 }
             }
 
-            if(tagFound)
-            {
-                telemetry.addLine("Tag of interest is in sight!");
-                telemetry.addLine(String.format("\nDetected tag ID=%d", tagOfInterest.id));
+            if (tagFound) {
+                telemetry.addLine("Tag of interest is in sight!\n\nLocation data:");
+            } else {
+                telemetry.addLine("Don't see tag of interest :(");
+
+                if (tagOfInterest == null) {
+                    CAZ = 3;
+                    telemetry.addLine("(The tag has never been seen)");
+                } else {
+                    telemetry.addLine("\nBut we HAVE seen the tag before; last seen at:");
+                }
             }
-            else
-            {
-                telemetry.addLine("Don't see tag of interest ");
+
+        } else {
+            telemetry.addLine("Don't see tag of interest :(");
+
+            if (tagOfInterest == null) {
+                CAZ = 3;
+                telemetry.addLine("(The tag has never been seen)");
+            } else {
+                telemetry.addLine("\nBut we HAVE seen the tag before; last seen at:");
             }
-        }
-        else
-        {
-            telemetry.addLine("Don't see tag of interest. ");
 
         }
+
         telemetry.update();
+        sleep(20);
 
-        if (tagOfInterest.id == Caz1)
-            sleep(20);
+        if (tagOfInterest == null || tagOfInterest.id == Caz3) {
+            CAZ = 3;
+        } else if (tagOfInterest.id == Caz2) {
+            CAZ = 2;
+        } else {
+            CAZ = 1;
+        }
+
     }
-
 }

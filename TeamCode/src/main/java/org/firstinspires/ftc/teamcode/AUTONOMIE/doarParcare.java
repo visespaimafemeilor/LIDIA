@@ -29,42 +29,42 @@ public class doarParcare extends LinearOpMode {
         detection.VisionInitialization(hardwareMap, telemetry);
         servouri.autoINIT(hardwareMap);
 
-        Pose2d start = new Pose2d(0,0,Math.toRadians(90));
+        Pose2d start = new Pose2d(0, 0, 0);
         drive.setPoseEstimate(start);
 
 
         TrajectorySequence CAZ1 = drive.trajectorySequenceBuilder(start)
-                .strafeLeft(30)
-                .forward(15)
-                        .build();
+                .strafeLeft(22)
+                .forward(30)
+                .build();
 
         Trajectory CAZ2 = drive.trajectoryBuilder(start)
-                .forward(15)
+                .forward(30)
                 .build();
 
         TrajectorySequence CAZ3 = drive.trajectorySequenceBuilder(start)
-                .strafeRight(30)
-                .forward(15)
+                .strafeRight(22)
+                .forward(30)
                 .build();
 
         waitForStart();
 
         detection.detectare(telemetry);
 
-        if(opModeIsActive()){
+        if (opModeIsActive()) {
+
             servouri.cleste.setPosition(0.45);
-            sleep(200);
-            servouri.turn.setPosition(0.3);
-            if (detection.tagOfInterest.id == detection.Caz1) {
+            sleep(400);
+            servouri.turn.setPosition(0.4);
+
+            if (detection.CAZ == 1) {
                 drive.followTrajectorySequence(CAZ1);
-            }
-            else if (detection.tagOfInterest.id == detection.Caz3) {
+            } else if (detection.CAZ == 2) {
+                drive.followTrajectory(CAZ2);
+            } else {
                 drive.followTrajectorySequence(CAZ3);
             }
-            else {
-                drive.followTrajectory(CAZ2);
-            }
-            sleep(500);
-        }}
+        }
 
     }
+}
