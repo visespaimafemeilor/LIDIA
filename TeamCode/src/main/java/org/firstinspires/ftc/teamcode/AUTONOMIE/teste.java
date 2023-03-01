@@ -11,6 +11,7 @@ import org.firstinspires.ftc.teamcode.drive.DriveConstants;
 import org.firstinspires.ftc.teamcode.elicopter.surub;
 import org.firstinspires.ftc.teamcode.drive.SampleMecanumDrive;
 import org.firstinspires.ftc.teamcode.elicopter.slide;
+import org.firstinspires.ftc.teamcode.recunoștință.Detection;
 
 @Config
 @Autonomous(group = "autonomie")
@@ -25,8 +26,8 @@ public class teste extends LinearOpMode{
         surub servouri = new surub();
         servouri.autoINIT(hardwareMap);
         slide.sliderINIT(hardwareMap);
-        //      Detection detection = new Detection();
-        //      detection.VisionInitialization(hardwareMap, telemetry);
+        Detection detection = new Detection();
+        detection.VisionInitialization(hardwareMap, telemetry);
         Pose2d start = new Pose2d(0,0, Math.toRadians(90));
         drive.setPoseEstimate(start);
 
@@ -53,7 +54,7 @@ public class teste extends LinearOpMode{
         //TODO START
         waitForStart();
 
-//      detection.detectare(telemetry);
+      detection.detectare(telemetry);
 
         if(opModeIsActive()){
             drive.followTrajectory(test);

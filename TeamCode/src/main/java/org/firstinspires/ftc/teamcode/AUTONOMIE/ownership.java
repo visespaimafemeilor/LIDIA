@@ -34,7 +34,7 @@ public class ownership extends LinearOpMode {
 
         TrajectorySequence preload = drive.trajectorySequenceBuilder(start)
                 .lineTo(
-                        new Vector2d(0, 38.5),
+                        new Vector2d(0, 37.5),
                         SampleMecanumDrive.getVelocityConstraint(slowerVelocity, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH),
                         SampleMecanumDrive.getAccelerationConstraint(slowerAcceleration)
                 )
@@ -55,7 +55,7 @@ public class ownership extends LinearOpMode {
                 .lineToLinearHeading(new Pose2d(-10,54.2,Math.toRadians(180)))
                 .lineToConstantHeading(new Vector2d(-25,54.2))
                 .addDisplacementMarker(3, ()->{
-                    slide.pozitiune(-210,0.8);
+                    slide.pozitiune(-215,0.8);
                     servouri.rasucire.setPosition(0.5);
                 })
                 .build();
@@ -67,11 +67,11 @@ public class ownership extends LinearOpMode {
                     servouri.cleste.setPosition(0.45);
                     sleep(200);
                     servouri.turn.setPosition(0.35);
-                    slide.pozitiune(-1180,1);
+                    slide.pozitiune(-1140,1);
                 })
 //                .lineToConstantHeading(new Vector2d(57.5,-9.5))
                 .lineTo(
-                        new Vector2d(9.5, 55.7),
+                        new Vector2d(8, 58),
                         SampleMecanumDrive.getVelocityConstraint(slowerVelocity, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH),
                         SampleMecanumDrive.getAccelerationConstraint(slowerAcceleration)
                 )
@@ -83,6 +83,7 @@ public class ownership extends LinearOpMode {
         TrajectorySequence puneUnu = drive.trajectorySequenceBuilder(first.end())
                 .addDisplacementMarker(()->{
                     servouri.cleste.setPosition(0.65);
+                    servouri.turn.setPosition(0.5);
                     sleep(200);
                     servouri.turn.setPosition(0.3);
                 })
@@ -93,7 +94,7 @@ public class ownership extends LinearOpMode {
                 .addDisplacementMarker(4, ()->{
                     slide.pozitiune(-175,0.8);
                 })
-                .lineToConstantHeading(new Vector2d(-26,53))
+                .lineToConstantHeading(new Vector2d(-26,52.5))
                 .build();
 
         //TODO second high
@@ -101,13 +102,13 @@ public class ownership extends LinearOpMode {
         TrajectorySequence second = drive.trajectorySequenceBuilder(puneUnu.end())
                 .addDisplacementMarker(()->{
                     servouri.cleste.setPosition(0.45);
-                    sleep(200);
+                    sleep(300);
                     servouri.turn.setPosition(0.35);
-                    slide.pozitiune(-1185,1);
+                    slide.pozitiune(-1140,1);
                 })
 //                .lineToConstantHeading(new Vector2d(57.5,-9.5))
                 .lineTo(
-                        new Vector2d(10, 55),
+                        new Vector2d(9, 57),
                         SampleMecanumDrive.getVelocityConstraint(slowerVelocity, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH),
                         SampleMecanumDrive.getAccelerationConstraint(slowerAcceleration)
                 )
@@ -119,6 +120,7 @@ public class ownership extends LinearOpMode {
         TrajectorySequence puneDoi = drive.trajectorySequenceBuilder(second.end())
                 .addDisplacementMarker(()->{
                     servouri.cleste.setPosition(0.65);
+                    servouri.turn.setPosition(0.5);
                     sleep(200);
                     servouri.turn.setPosition(0.3);
                 })
@@ -127,9 +129,9 @@ public class ownership extends LinearOpMode {
                     servouri.rasucire.setPosition(0.5);
                 })
                 .addDisplacementMarker(4, ()->{
-                    slide.pozitiune(-130,0.8);
+                    slide.pozitiune(-100,0.8);
                 })
-                .lineToConstantHeading(new Vector2d(-26.5,53))
+                .lineToConstantHeading(new Vector2d(-26,52.5))
                 .build();
 
         //TODO third high
@@ -139,11 +141,11 @@ public class ownership extends LinearOpMode {
                     servouri.cleste.setPosition(0.45);
                     sleep(200);
                     servouri.turn.setPosition(0.35);
-                    slide.pozitiune(-1185,1);
+                    slide.pozitiune(-1140,1);
                 })
 //                .lineToConstantHeading(new Vector2d(57.5,-9.5))
                 .lineTo(
-                        new Vector2d(9.5, 55),
+                        new Vector2d(8.5, 56.5),
                         SampleMecanumDrive.getVelocityConstraint(slowerVelocity, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH),
                         SampleMecanumDrive.getAccelerationConstraint(slowerAcceleration)
                 )
@@ -155,6 +157,7 @@ public class ownership extends LinearOpMode {
         TrajectorySequence puneTrei = drive.trajectorySequenceBuilder(third.end())
                 .addDisplacementMarker(()->{
                     servouri.cleste.setPosition(0.65);
+                    servouri.turn.setPosition(0.5);
                     sleep(200);
                     servouri.turn.setPosition(0.3);
                 })
@@ -163,9 +166,9 @@ public class ownership extends LinearOpMode {
                     servouri.rasucire.setPosition(0.5);
                 })
                 .addDisplacementMarker(4, ()->{
-                    slide.pozitiune(-75,0.8);
+                    slide.pozitiune(-50,0.8);
                 })
-                .lineToConstantHeading(new Vector2d(-26.5,53))
+                .lineToConstantHeading(new Vector2d(-26.5,52.5))
                 .build();
 
         //TODO fourth high
@@ -175,11 +178,11 @@ public class ownership extends LinearOpMode {
                     servouri.cleste.setPosition(0.45);
                     sleep(200);
                     servouri.turn.setPosition(0.35);
-                    slide.pozitiune(-1185,1);
+                    slide.pozitiune(-1145,1);
                 })
 //                .lineToConstantHeading(new Vector2d(57.5,-9.5))
                 .lineTo(
-                        new Vector2d(9.8, 59.85),
+                        new Vector2d(9.2, 56),
                         SampleMecanumDrive.getVelocityConstraint(slowerVelocity, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH),
                         SampleMecanumDrive.getAccelerationConstraint(slowerAcceleration)
                 )
@@ -191,6 +194,44 @@ public class ownership extends LinearOpMode {
         TrajectorySequence punePatru = drive.trajectorySequenceBuilder(fourth.end())
                 .addDisplacementMarker(()->{
                     servouri.cleste.setPosition(0.65);
+                    servouri.turn.setPosition(0.5);
+                    sleep(200);
+                    servouri.turn.setPosition(0.3);
+                })
+                .addDisplacementMarker(2, ()->{
+                    servouri.turn.setPosition(0.5);
+                    servouri.rasucire.setPosition(0.5);
+                })
+                .addDisplacementMarker(4, ()->{
+                    slide.pozitiune(0,0.8);
+                })
+                .lineToConstantHeading(new Vector2d(-26,52))
+                .build();
+
+        //TODO fifth high
+
+        TrajectorySequence fifth = drive.trajectorySequenceBuilder(punePatru.end())
+                .addDisplacementMarker(()->{
+                    servouri.cleste.setPosition(0.45);
+                    sleep(200);
+                    servouri.turn.setPosition(0.35);
+                    slide.pozitiune(-1140,1);
+                })
+//                .lineToConstantHeading(new Vector2d(57.5,-9.5))
+                .lineTo(
+                        new Vector2d(9.2, 55.2),
+                        SampleMecanumDrive.getVelocityConstraint(slowerVelocity, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH),
+                        SampleMecanumDrive.getAccelerationConstraint(slowerAcceleration)
+                )
+                .addDisplacementMarker(2, ()->{
+                    servouri.rasucire.setPosition(0.65);
+                })
+                .build();
+
+        TrajectorySequence puneCinci = drive.trajectorySequenceBuilder(fifth.end())
+                .addDisplacementMarker(()->{
+                    servouri.cleste.setPosition(0.65);
+                    servouri.turn.setPosition(0.5);
                     sleep(200);
                     servouri.turn.setPosition(0.3);
                 })
@@ -217,6 +258,8 @@ public class ownership extends LinearOpMode {
             drive.followTrajectorySequence(puneTrei);
             drive.followTrajectorySequence(fourth);
             drive.followTrajectorySequence(punePatru);
+            drive.followTrajectorySequence(fifth);
+            drive.followTrajectorySequence(puneCinci);
 
             slide.autonomousSlider(0,0.5);
             while(slide.slide.getCurrentPosition()<0){}

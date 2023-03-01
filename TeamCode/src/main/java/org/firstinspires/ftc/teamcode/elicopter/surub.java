@@ -22,28 +22,6 @@ public class surub {
 
     int curl = 0;
 
-
-//    public void servoINIT(HardwareMap hardwareMap){
-//        cleste = hardwareMap.get(Servo.class, "cleste");
-//        rasucire = hardwareMap.get(Servo.class, "rasucire");
-//        turn = hardwareMap.get(Servo.class, "turn");
-//
-//        cleste.setPosition(0.7);
-//        turn.setPosition(0.3);
-//        rasucire.setPosition(0.5);
-//    }
-
-//    public void autoINIT(HardwareMap hardwareMap) throws InterruptedException{
-//        cleste = hardwareMap.get(Servo.class, "cleste");
-//        rasucire = hardwareMap.get(Servo.class, "rasucire");
-//        turn = hardwareMap.get(Servo.class, "turn");
-//
-//        rasucire.setPosition(0.5);
-//        cleste.setPosition(0.8);
-//        sleep(500);
-//        turn.setPosition(0.5);
-//    }
-
     public void servoINIT(HardwareMap hardwareMap){
         sensor = hardwareMap.get(RevColorSensorV3.class, "senzor");
 
@@ -102,28 +80,6 @@ public class surub {
         }
     }
 
-//    public void swing (int pozitie, double putere) {
-//        rasucire.setTargetPosition(pozitie);
-//        rasucire.setPower(putere);
-//        rasucire.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-//    }
-//
-//    public void autonomousSwing (int position, double power){
-//        swing(position,power);
-//        while (rasucire.getCurrentPosition()>position){}
-//    }
-//
-//    public void intoarcere (boolean x, boolean y, boolean z){
-//        if(x){
-//            curl=-85;
-//        }
-//        if(y){
-//            curl=0;
-//        }
-//        if(z){
-//            curl=85;
-//        }
-//    }
 
     public boolean acolosa(){
         if(sensor.getDistance(DistanceUnit.CM) <=5){
@@ -147,5 +103,28 @@ public class surub {
             rasucire.setPosition(0.6);
         }
     }
+
+    //    public void swing (int pozitie, double putere) {
+//        rasucire.setTargetPosition(pozitie);
+//        rasucire.setPower(putere);
+//        rasucire.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+//    }
+//
+//    public void autonomousSwing (int position, double power){
+//        swing(position,power);
+//        while (rasucire.getCurrentPosition()>position){}
+//    }
+//
+//    public void intoarcere (boolean x, boolean y, boolean z){
+//        if(x){
+//            curl=-85;
+//        }
+//        if(y){
+//            curl=0;
+//        }
+//        if(z){
+//            curl=85;
+//        }
+//    }
 
 }
