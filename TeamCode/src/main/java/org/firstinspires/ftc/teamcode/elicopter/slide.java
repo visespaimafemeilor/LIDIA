@@ -40,23 +40,19 @@ public class slide {
         }
     }
 
-    public void sliderControllers(boolean cross, boolean circle, boolean triangle, boolean square)
-            throws InterruptedException {
-        if(triangle) {
-            pozitie = -1155;
-            sleep(200);
-        }//high
-        if(circle){
-            pozitie = -820;
-            sleep(200);
-        }//mid
-        if(cross){
-            pozitie = -410;
-            sleep(200);
-        }//low
-        if(square){
-            pozitie = -50;
-            sleep(200);
-        }//base
-    }
+//    public void sliderControllers(boolean cross, boolean circle, boolean triangle, boolean square)
+//            throws InterruptedException {
+//        if(triangle) {
+//            pozitie = -1155;
+//        }//high
+//        if(circle){
+//            pozitie = -820;
+//        }//mid
+//        if(cross){
+//            pozitie = -410;
+//        }//low
+//        if(square){
+//            pozitie = -50;
+//        }//base
+//    }
 }

@@ -35,7 +35,24 @@ public class telop extends LinearOpMode {
 
             slide.pozitiune(slide.pozitie,1);
             slide.pozitie+=(gamepad2.left_trigger-gamepad2.right_trigger)*5;
-            slide.sliderControllers(gamepad2.cross,gamepad2.circle,gamepad2.triangle,gamepad2.square);
+
+            if(gamepad2.triangle) {
+                slide.pozitie = -1160;
+                surub.turn.setPosition(0.35);
+            }//high
+            if(gamepad2.circle){
+                slide.pozitie = -820;
+                surub.turn.setPosition(0.35);
+            }//mid
+            if(gamepad2.cross){
+                slide.pozitie = -410;
+                surub.turn.setPosition(0.35);
+            }//low
+            if(gamepad2.square){
+                slide.pozitie = -50;
+            }//base
+
+           // slide.sliderControllers(gamepad2.cross,gamepad2.circle,gamepad2.triangle,gamepad2.square);
             slide.corectie();
 
 

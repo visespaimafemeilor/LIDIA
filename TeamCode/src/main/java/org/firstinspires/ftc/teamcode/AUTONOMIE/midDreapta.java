@@ -39,7 +39,7 @@ public class midDreapta extends LinearOpMode {
 
         TrajectorySequence preload = drive.trajectorySequenceBuilder(start)
                 .lineTo(
-                        new Vector2d(0, -37.5),
+                        new Vector2d(0, -37),
                         SampleMecanumDrive.getVelocityConstraint(slowerVelocity, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH),
                         SampleMecanumDrive.getAccelerationConstraint(slowerAcceleration)
                 )
@@ -58,7 +58,7 @@ public class midDreapta extends LinearOpMode {
                     servouri.cleste.setPosition(0.6);
                 })
                 .lineToLinearHeading(new Pose2d(-10,-54.2,Math.toRadians(180)))
-                .lineToConstantHeading(new Vector2d(-25,-53))
+                .lineToConstantHeading(new Vector2d(-25,-54.2))
                 .addDisplacementMarker(3, ()->{
                     slide.pozitiune(-210,1);
                     servouri.rasucire.setPosition(0.5);
@@ -70,13 +70,13 @@ public class midDreapta extends LinearOpMode {
         TrajectorySequence first = drive.trajectorySequenceBuilder(stack.end())
                 .addDisplacementMarker(()->{
                     servouri.cleste.setPosition(0.45);
-                    sleep(200);
+                    sleep(400);
                     servouri.turn.setPosition(0.35);
                     slide.pozitiune(-785,1);
                 })
 //                .lineToConstantHeading(new Vector2d(57.5,-9.5))
                 .lineTo(
-                        new Vector2d(9, -48.5),
+                        new Vector2d(7.5, -48.5),
                         SampleMecanumDrive.getVelocityConstraint(slowerVelocity, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH),
                         SampleMecanumDrive.getAccelerationConstraint(slowerAcceleration)
                 )
@@ -99,7 +99,7 @@ public class midDreapta extends LinearOpMode {
                 .addDisplacementMarker(4, ()->{
                     slide.pozitiune(-149,0.8);
                 })
-                .lineToConstantHeading(new Vector2d(-27,-52))
+                .lineToConstantHeading(new Vector2d(-26.5,-53.5))
                 .build();
 
         //TODO second mid
@@ -107,13 +107,13 @@ public class midDreapta extends LinearOpMode {
         TrajectorySequence second = drive.trajectorySequenceBuilder(puneUnu.end())
                 .addDisplacementMarker(()->{
                     servouri.cleste.setPosition(0.45);
-                    sleep(200);
+                    sleep(400);
                     servouri.turn.setPosition(0.35);
                     slide.pozitiune(-785,1);
                 })
 //                .lineToConstantHeading(new Vector2d(57.5,-9.5))
                 .lineTo(
-                        new Vector2d(8.5, -48.7),
+                        new Vector2d(7.5, -48.7),
                         SampleMecanumDrive.getVelocityConstraint(slowerVelocity, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH),
                         SampleMecanumDrive.getAccelerationConstraint(slowerAcceleration)
                 )
@@ -136,7 +136,7 @@ public class midDreapta extends LinearOpMode {
                 .addDisplacementMarker(10, ()->{
                     slide.pozitiune(-110,0.8);
                 })
-                .lineToConstantHeading(new Vector2d(-26.5,-52))
+                .lineToConstantHeading(new Vector2d(-26.5,-53.5))
                 .build();
 
         //TODO third mid
@@ -144,13 +144,13 @@ public class midDreapta extends LinearOpMode {
         TrajectorySequence third = drive.trajectorySequenceBuilder(puneDoi.end())
                 .addDisplacementMarker(()->{
                     servouri.cleste.setPosition(0.45);
-                    sleep(200);
+                    sleep(400);
                     servouri.turn.setPosition(0.35);
                     slide.pozitiune(-775,1);
                 })
 //                .lineToConstantHeading(new Vector2d(57.5,-9.5))
                 .lineTo(
-                        new Vector2d(9, -48.5),
+                        new Vector2d(7, -48.5),
                         SampleMecanumDrive.getVelocityConstraint(slowerVelocity, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH),
                         SampleMecanumDrive.getAccelerationConstraint(slowerAcceleration)
                 )
@@ -173,7 +173,7 @@ public class midDreapta extends LinearOpMode {
                 .addDisplacementMarker(10, ()->{
                     slide.pozitiune(-55,0.8);
                 })
-                .lineToConstantHeading(new Vector2d(-26.5,-52))
+                .lineToConstantHeading(new Vector2d(-26.5,-53.5))
                 .build();
 
         //TODO fourth mid
@@ -181,13 +181,13 @@ public class midDreapta extends LinearOpMode {
         TrajectorySequence fourth = drive.trajectorySequenceBuilder(puneTrei.end())
                 .addDisplacementMarker(()->{
                     servouri.cleste.setPosition(0.45);
-                    sleep(200);
+                    sleep(400);
                     servouri.turn.setPosition(0.35);
                     slide.pozitiune(-775,1);
                 })
 //                .lineToConstantHeading(new Vector2d(57.5,-9.5))
                 .lineTo(
-                        new Vector2d(8.8, -48.5),
+                        new Vector2d(6, -48.5),
                         SampleMecanumDrive.getVelocityConstraint(slowerVelocity, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH),
                         SampleMecanumDrive.getAccelerationConstraint(slowerAcceleration)
                 )
@@ -210,7 +210,7 @@ public class midDreapta extends LinearOpMode {
                 .addDisplacementMarker(10, ()->{
                     slide.pozitiune(0,0.8);
                 })
-                .lineToConstantHeading(new Vector2d(-26.5,-52))
+                .lineToConstantHeading(new Vector2d(-26.5,-53.5))
                 .build();
 
         //TODO fifth mid
@@ -218,13 +218,13 @@ public class midDreapta extends LinearOpMode {
         TrajectorySequence fifth = drive.trajectorySequenceBuilder(punePatru.end())
                 .addDisplacementMarker(()->{
                     servouri.cleste.setPosition(0.45);
-                    sleep(200);
+                    sleep(400);
                     servouri.turn.setPosition(0.35);
                     slide.pozitiune(-790,1);
                 })
 //                .lineToConstantHeading(new Vector2d(57.5,-9.5))
                 .lineTo(
-                        new Vector2d(8, -48),
+                        new Vector2d(5.6, -49),
                         SampleMecanumDrive.getVelocityConstraint(slowerVelocity, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH),
                         SampleMecanumDrive.getAccelerationConstraint(slowerAcceleration)
                 )
@@ -249,19 +249,19 @@ public class midDreapta extends LinearOpMode {
         //TODO CAZUL 1
 
         Trajectory CAZ1 = drive.trajectoryBuilder(puneCinci.end())
-                .lineToConstantHeading(new Vector2d(20,-52))
+                .lineToConstantHeading(new Vector2d(22,-51))
                 .build();
 
         //TODO CAZUL 2
 
         Trajectory CAZ2 = drive.trajectoryBuilder(puneCinci.end())
-                .lineToConstantHeading(new Vector2d(1,-52))
+                .lineToConstantHeading(new Vector2d(-2,-51))
                 .build();
 
         //TODO CAZUL 3
 
         Trajectory CAZ3 = drive.trajectoryBuilder(puneCinci.end())
-                .lineToConstantHeading(new Vector2d(-26,-51))
+                .lineToConstantHeading(new Vector2d(-28,-51))
                 .build();
 
 

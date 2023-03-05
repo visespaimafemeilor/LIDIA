@@ -40,7 +40,7 @@ public class highStanga extends LinearOpMode {
 
         TrajectorySequence preload = drive.trajectorySequenceBuilder(start)
                 .lineTo(
-                        new Vector2d(0, 37.5),
+                        new Vector2d(0, 37),
                         SampleMecanumDrive.getVelocityConstraint(slowerVelocity, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH),
                         SampleMecanumDrive.getAccelerationConstraint(slowerAcceleration)
                 )
@@ -71,13 +71,13 @@ public class highStanga extends LinearOpMode {
         TrajectorySequence first = drive.trajectorySequenceBuilder(stack.end())
                 .addDisplacementMarker(()->{
                     servouri.cleste.setPosition(0.45);
-                    sleep(200);
+                    sleep(400);
                     servouri.turn.setPosition(0.35);
-                    slide.pozitiune(-1140,1);
+                    slide.pozitiune(-1150,1);
                 })
 //                .lineToConstantHeading(new Vector2d(57.5,-9.5))
                 .lineTo(
-                        new Vector2d(8, 57),
+                        new Vector2d(7.5, 57.2),
                         SampleMecanumDrive.getVelocityConstraint(slowerVelocity, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH),
                         SampleMecanumDrive.getAccelerationConstraint(slowerAcceleration)
                 )
@@ -98,9 +98,9 @@ public class highStanga extends LinearOpMode {
                     servouri.rasucire.setPosition(0.5);
                 })
                 .addDisplacementMarker(4, ()->{
-                    slide.pozitiune(-149,1);
+                    slide.pozitiune(-150,1);
                 })
-                .lineToConstantHeading(new Vector2d(-27,52))
+                .lineToConstantHeading(new Vector2d(-26.5,52))
                 .build();
 
         //TODO second high
@@ -108,13 +108,13 @@ public class highStanga extends LinearOpMode {
         TrajectorySequence second = drive.trajectorySequenceBuilder(puneUnu.end())
                 .addDisplacementMarker(()->{
                     servouri.cleste.setPosition(0.45);
-                    sleep(200);
+                    sleep(400);
                     servouri.turn.setPosition(0.35);
-                    slide.pozitiune(-1140,1);
+                    slide.pozitiune(-1150,1);
                 })
 //                .lineToConstantHeading(new Vector2d(57.5,-9.5))
                 .lineTo(
-                        new Vector2d(8, 57),
+                        new Vector2d(7.5, 57),
                         SampleMecanumDrive.getVelocityConstraint(slowerVelocity, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH),
                         SampleMecanumDrive.getAccelerationConstraint(slowerAcceleration)
                 )
@@ -137,7 +137,7 @@ public class highStanga extends LinearOpMode {
                 .addDisplacementMarker(4, ()->{
                     slide.pozitiune(-110,1);
                 })
-                .lineToConstantHeading(new Vector2d(-27,52.5))
+                .lineToConstantHeading(new Vector2d(-27.5,52.5))
                 .build();
 
         //TODO third high
@@ -145,13 +145,13 @@ public class highStanga extends LinearOpMode {
         TrajectorySequence third = drive.trajectorySequenceBuilder(puneDoi.end())
                 .addDisplacementMarker(()->{
                     servouri.cleste.setPosition(0.45);
-                    sleep(200);
+                    sleep(400);
                     servouri.turn.setPosition(0.35);
-                    slide.pozitiune(-1140,1);
+                    slide.pozitiune(-1150,1);
                 })
 //                .lineToConstantHeading(new Vector2d(57.5,-9.5))
                 .lineTo(
-                        new Vector2d(8, 56.5),
+                        new Vector2d(7, 57),
                         SampleMecanumDrive.getVelocityConstraint(slowerVelocity, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH),
                         SampleMecanumDrive.getAccelerationConstraint(slowerAcceleration)
                 )
@@ -182,13 +182,13 @@ public class highStanga extends LinearOpMode {
         TrajectorySequence fourth = drive.trajectorySequenceBuilder(puneTrei.end())
                 .addDisplacementMarker(()->{
                     servouri.cleste.setPosition(0.45);
-                    sleep(200);
+                    sleep(500);
                     servouri.turn.setPosition(0.35);
-                    slide.pozitiune(-1140,1);
+                    slide.pozitiune(-1150,1);
                 })
 //                .lineToConstantHeading(new Vector2d(57.5,-9.5))
                 .lineTo(
-                        new Vector2d(8, 56.5),
+                        new Vector2d(6, 56),
                         SampleMecanumDrive.getVelocityConstraint(slowerVelocity, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH),
                         SampleMecanumDrive.getAccelerationConstraint(slowerAcceleration)
                 )
@@ -219,13 +219,13 @@ public class highStanga extends LinearOpMode {
         TrajectorySequence fifth = drive.trajectorySequenceBuilder(punePatru.end())
                 .addDisplacementMarker(()->{
                     servouri.cleste.setPosition(0.45);
-                    sleep(200);
+                    sleep(400);
                     servouri.turn.setPosition(0.35);
-                    slide.pozitiune(-1140,1);
+                    slide.pozitiune(-1150,1);
                 })
 //                .lineToConstantHeading(new Vector2d(57.5,-9.5))
                 .lineTo(
-                        new Vector2d(8, 56.5),
+                        new Vector2d(5.6, 55.5),
                         SampleMecanumDrive.getVelocityConstraint(slowerVelocity, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH),
                         SampleMecanumDrive.getAccelerationConstraint(slowerAcceleration)
                 )
@@ -253,19 +253,19 @@ public class highStanga extends LinearOpMode {
         //TODO CAZUL 1
 
         Trajectory CAZ1 = drive.trajectoryBuilder(puneCinci.end())
-                .lineToConstantHeading(new Vector2d(-26,51))
+                .lineToConstantHeading(new Vector2d(-28,51))
                 .build();
 
         //TODO CAZUL 2
 
         Trajectory CAZ2 = drive.trajectoryBuilder(puneCinci.end())
-                .lineToConstantHeading(new Vector2d(1,51))
+                .lineToConstantHeading(new Vector2d(-2.5,51))
                 .build();
 
         //TODO CAZUL 3
 
         Trajectory CAZ3 = drive.trajectoryBuilder(puneCinci.end())
-                .lineToConstantHeading(new Vector2d(18,51))
+                .lineToConstantHeading(new Vector2d(20,51))
                 .build();
 
         waitForStart();
