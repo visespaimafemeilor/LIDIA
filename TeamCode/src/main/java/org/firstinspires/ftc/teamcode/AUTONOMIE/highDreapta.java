@@ -58,8 +58,10 @@ public class highDreapta extends LinearOpMode {
                     sleep(200);
                     servouri.cleste.setPosition(0.6);
                 })
+                .lineToConstantHeading(new Vector2d(0,-58))
+                .lineToConstantHeading(new Vector2d(0,-55))
                 .lineToLinearHeading(new Pose2d(-10,-54.2,Math.toRadians(180)))
-                .lineToConstantHeading(new Vector2d(-25,-54.2))
+                .lineToConstantHeading(new Vector2d(-26,-54.2))
                 .addDisplacementMarker(3, ()->{
                     slide.pozitiune(-210,1);
                     servouri.rasucire.setPosition(0.5);
@@ -137,7 +139,7 @@ public class highDreapta extends LinearOpMode {
                 .addDisplacementMarker(4, ()->{
                     slide.pozitiune(-110,1);
                 })
-                .lineToConstantHeading(new Vector2d(-26.5,-52.5))
+                .lineToConstantHeading(new Vector2d(-27.5,-52.5))
                 .build();
 
         //TODO third high
@@ -174,7 +176,7 @@ public class highDreapta extends LinearOpMode {
                 .addDisplacementMarker(4, ()->{
                     slide.pozitiune(-55,1);
                 })
-                .lineToConstantHeading(new Vector2d(-26.5,-52.5))
+                .lineToConstantHeading(new Vector2d(-27,-52.5))
                 .build();
 
         //TODO fourth high
@@ -188,7 +190,7 @@ public class highDreapta extends LinearOpMode {
                 })
 //                .lineToConstantHeading(new Vector2d(57.5,-9.5))
                 .lineTo(
-                        new Vector2d(6, -56.5),
+                        new Vector2d(7, -57),
                         SampleMecanumDrive.getVelocityConstraint(slowerVelocity, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH),
                         SampleMecanumDrive.getAccelerationConstraint(slowerAcceleration)
                 )
@@ -211,7 +213,7 @@ public class highDreapta extends LinearOpMode {
                 .addDisplacementMarker(4, ()->{
                     slide.pozitiune(0,1);
                 })
-                .lineToConstantHeading(new Vector2d(-26.5,-52))
+                .lineToConstantHeading(new Vector2d(-27,-52))
                 .build();
 
         //TODO fifth high
@@ -225,7 +227,7 @@ public class highDreapta extends LinearOpMode {
                 })
 //                .lineToConstantHeading(new Vector2d(57.5,-9.5))
                 .lineTo(
-                        new Vector2d(5.6, -56),
+                        new Vector2d(6.5, -56.5),
                         SampleMecanumDrive.getVelocityConstraint(slowerVelocity, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH),
                         SampleMecanumDrive.getAccelerationConstraint(slowerAcceleration)
                 )
@@ -253,7 +255,7 @@ public class highDreapta extends LinearOpMode {
         //TODO CAZUL 1
 
         Trajectory CAZ1 = drive.trajectoryBuilder(puneCinci.end())
-                .lineToConstantHeading(new Vector2d(22,-51))
+                .lineToConstantHeading(new Vector2d(20,-51))
                 .build();
 
         //TODO CAZUL 2

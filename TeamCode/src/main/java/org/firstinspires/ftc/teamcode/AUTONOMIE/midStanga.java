@@ -38,7 +38,7 @@ public class midStanga extends LinearOpMode {
 
         TrajectorySequence preload = drive.trajectorySequenceBuilder(start)
                 .lineTo(
-                        new Vector2d(0, 37.5),
+                        new Vector2d(0, 37),
                         SampleMecanumDrive.getVelocityConstraint(slowerVelocity, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH),
                         SampleMecanumDrive.getAccelerationConstraint(slowerAcceleration)
                 )
@@ -56,6 +56,7 @@ public class midStanga extends LinearOpMode {
                     sleep(200);
                     servouri.cleste.setPosition(0.6);
                 })
+                .lineToConstantHeading(new Vector2d(0,57))
                 .lineToLinearHeading(new Pose2d(-10,54.2,Math.toRadians(180)))
                 .lineToConstantHeading(new Vector2d(-25,53))
                 .addDisplacementMarker(3, ()->{
@@ -75,7 +76,7 @@ public class midStanga extends LinearOpMode {
                 })
 //                .lineToConstantHeading(new Vector2d(57.5,-9.5))
                 .lineTo(
-                        new Vector2d(9, 48.5),
+                        new Vector2d(10, 48.5),
                         SampleMecanumDrive.getVelocityConstraint(slowerVelocity, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH),
                         SampleMecanumDrive.getAccelerationConstraint(slowerAcceleration)
                 )
@@ -98,7 +99,7 @@ public class midStanga extends LinearOpMode {
                 .addDisplacementMarker(4, ()->{
                     slide.pozitiune(-149,0.8);
                 })
-                .lineToConstantHeading(new Vector2d(-27,53))
+                .lineToConstantHeading(new Vector2d(-26.5,53))
                 .build();
 
         //TODO second mid
@@ -112,7 +113,7 @@ public class midStanga extends LinearOpMode {
                 })
 //                .lineToConstantHeading(new Vector2d(57.5,-9.5))
                 .lineTo(
-                        new Vector2d(8.5, 48.7),
+                        new Vector2d(9.5, 48.7),
                         SampleMecanumDrive.getVelocityConstraint(slowerVelocity, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH),
                         SampleMecanumDrive.getAccelerationConstraint(slowerAcceleration)
                 )
@@ -135,7 +136,7 @@ public class midStanga extends LinearOpMode {
                 .addDisplacementMarker(10, ()->{
                     slide.pozitiune(-110,0.8);
                 })
-                .lineToConstantHeading(new Vector2d(-26.5,53))
+                .lineToConstantHeading(new Vector2d(-26,53))
                 .build();
 
         //TODO third mid
@@ -149,7 +150,7 @@ public class midStanga extends LinearOpMode {
                 })
 //                .lineToConstantHeading(new Vector2d(57.5,-9.5))
                 .lineTo(
-                        new Vector2d(9, 48.5),
+                        new Vector2d(10, 48.5),
                         SampleMecanumDrive.getVelocityConstraint(slowerVelocity, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH),
                         SampleMecanumDrive.getAccelerationConstraint(slowerAcceleration)
                 )
@@ -172,7 +173,7 @@ public class midStanga extends LinearOpMode {
                 .addDisplacementMarker(10, ()->{
                     slide.pozitiune(-55,0.8);
                 })
-                .lineToConstantHeading(new Vector2d(-26.5,53))
+                .lineToConstantHeading(new Vector2d(-26,53))
                 .build();
 
         //TODO fourth mid
@@ -186,7 +187,7 @@ public class midStanga extends LinearOpMode {
                 })
 //                .lineToConstantHeading(new Vector2d(57.5,-9.5))
                 .lineTo(
-                        new Vector2d(8.8, 46),
+                        new Vector2d(9.5, 49),
                         SampleMecanumDrive.getVelocityConstraint(slowerVelocity, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH),
                         SampleMecanumDrive.getAccelerationConstraint(slowerAcceleration)
                 )
@@ -209,7 +210,7 @@ public class midStanga extends LinearOpMode {
                 .addDisplacementMarker(10, ()->{
                     slide.pozitiune(0,0.8);
                 })
-                .lineToConstantHeading(new Vector2d(-26.5,53))
+                .lineToConstantHeading(new Vector2d(-26,53))
                 .build();
 
         //TODO fifth mid
@@ -223,7 +224,7 @@ public class midStanga extends LinearOpMode {
                 })
 //                .lineToConstantHeading(new Vector2d(57.5,-9.5))
                 .lineTo(
-                        new Vector2d(8, 49),
+                        new Vector2d(9.5, 49),
                         SampleMecanumDrive.getVelocityConstraint(slowerVelocity, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH),
                         SampleMecanumDrive.getAccelerationConstraint(slowerAcceleration)
                 )
@@ -260,7 +261,7 @@ public class midStanga extends LinearOpMode {
         //TODO CAZUL 3
 
         Trajectory CAZ3 = drive.trajectoryBuilder(puneCinci.end())
-                .lineToConstantHeading(new Vector2d(20,51))
+                .lineToConstantHeading(new Vector2d(22,51))
                 .build();
 
 

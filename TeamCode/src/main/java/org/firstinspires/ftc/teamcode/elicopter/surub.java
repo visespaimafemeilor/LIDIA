@@ -10,13 +10,11 @@ import com.qualcomm.robotcore.hardware.Servo;
 
 import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 
-public class surub {
+public class surub{
 
     public Servo cleste;
     public Servo turn;
     public Servo rasucire;
-
-//    public DcMotor rasucire;
 
     public RevColorSensorV3 sensor;
 
@@ -30,14 +28,8 @@ public class surub {
         rasucire = hardwareMap.get(Servo.class,"rasucire");
 
         cleste.setPosition(0.65);
-        turn.setPosition(0.4);
+        turn.setPosition(0.35);
         rasucire.setPosition(0.5);
-
-//        rasucire = hardwareMap.get(DcMotor.class, "rasucire");
-//        rasucire.setDirection(DcMotorSimple.Direction.FORWARD);
-//        rasucire.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-//        rasucire.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-//        rasucire.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
     }
 
     public void autoINIT(HardwareMap hardwareMap) throws InterruptedException{
@@ -51,12 +43,6 @@ public class surub {
         sleep(200);
         turn.setPosition(0.2);
         rasucire.setPosition(0.5);
-
-//        rasucire = hardwareMap.get(DcMotor.class, "rasucire");
-//        rasucire.setDirection(DcMotorSimple.Direction.FORWARD);
-//        rasucire.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-//        rasucire.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-//        rasucire.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
     }
 
     public void apucare(boolean x, boolean y){
@@ -104,27 +90,5 @@ public class surub {
         }
     }
 
-    //    public void swing (int pozitie, double putere) {
-//        rasucire.setTargetPosition(pozitie);
-//        rasucire.setPower(putere);
-//        rasucire.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-//    }
-//
-//    public void autonomousSwing (int position, double power){
-//        swing(position,power);
-//        while (rasucire.getCurrentPosition()>position){}
-//    }
-//
-//    public void intoarcere (boolean x, boolean y, boolean z){
-//        if(x){
-//            curl=-85;
-//        }
-//        if(y){
-//            curl=0;
-//        }
-//        if(z){
-//            curl=85;
-//        }
-//    }
 
 }
